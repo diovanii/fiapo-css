@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+@-moz-document url-prefix() {
+  * {
+    user-select: auto !important;
+    -moz-user-select: auto !important;
+  }
+}
+
+html, body {
+  height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+ol, ul {
+  list-style-type: none;
+}
+
+input, textarea, button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+textarea {
+  outline: none;
+  resize: none;
+  height: 160px;
+  overflow-y: auto;
+  background-color: #fff;
+}
+
+a,
+button,
+input[type=submit],
+input[type=button]{
+  cursor: pointer;
+  outline: 0;
+}
+
+button,
+select,
+textarea,
+input[type=text],
+input[type=email],
+input[type=submit],
+input[type=password] {
+  outline: 0;
+  border: 0;
+  background-color: #fff;
+}
+
+input[type=text]::-ms-clear{
+  display: none;
+}
+
+/*********************** GENERAL CLASSES **********************/
+
+.clear{
+  clear:both;
+}
+
+.container{
+  max-width: 1280px;
+  margin:0 auto;
+  padding:0 2%;
+}
+
+.alert {
+  padding: 20px;
+  font-weight: 500;
+  line-height: 25px;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.success {
+  color: #14220e;
+  background-color: #6ab04c;
+}
+
+.error {
+  color: #5f0c0b;
+  background-color: #eb4d4b;
+}
+
+.formControl textarea,
+.formControl input[type=text],
+.formControl input[type=email] {
+  color: #313131;
+  transition: 0.35s;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+.formControl textarea:hover,
+.formControl input[type=text]:hover,
+.formControl input[type=email]:hover {
+  box-shadow: 0px 0px 0px 2px rgba(10,198,255,0.5);
+  -moz-box-shadow: 0px 0px 0px 2px rgba(10,198,255,0.5);
+  -webkit-box-shadow: 0px 0px 0px 2px rgba(10,198,255,0.5);
+}
+
+.formControl input,
+.formControl textarea {
+  height: 40px;
+  padding: 10px;
+  font-size: 18px;
+}
