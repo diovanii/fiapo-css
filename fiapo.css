@@ -5,7 +5,7 @@
 
 /*
  * author: Diovani Dal'Moro
- * version: v1.1
+ * version: 1.2
  * license: MIT License 
  *
 */
@@ -37,7 +37,9 @@ ol, ul {
   list-style-type: none;
 }
 
-input, textarea, button {
+input,
+textarea,
+button {
   border: 0;
   outline: none;
   border-radius: 0;
@@ -57,7 +59,7 @@ textarea {
 a,
 button,
 input[type=submit],
-input[type=button]{
+input[type=button] {
   cursor: pointer;
   outline: 0;
 }
@@ -67,6 +69,7 @@ select,
 textarea,
 input[type=text],
 input[type=email],
+input[type=button],
 input[type=submit],
 input[type=password] {
   outline: 0;
@@ -108,26 +111,42 @@ input[type=text]::-ms-clear{
   background-color: #eb4d4b;
 }
 
-.formControl textarea,
-.formControl input[type=text],
-.formControl input[type=email] {
+.formControl > textarea,
+.formControl > input[type=text],
+.formControl > input[type=email],
+.formControl > input[type=submit] {
   color: #313131;
+  font-size: 16px;
+  padding: 8px;
   transition: 0.35s;
   border-radius: 3px;
   border: 1px solid #ccc;
 }
 
-.formControl textarea:hover,
-.formControl input[type=text]:hover,
-.formControl input[type=email]:hover {
-  box-shadow: 0px 0px 0px 2px rgba(10,198,255,0.5);
-  -moz-box-shadow: 0px 0px 0px 2px rgba(10,198,255,0.5);
-  -webkit-box-shadow: 0px 0px 0px 2px rgba(10,198,255,0.5);
+.formControl input[type=submit],
+.formControl input[type=button],
+.formControl button {
+  font-weight: bold;
+  transition: 0.35s;
+  border: 0;
 }
 
-.formControl input,
-.formControl textarea {
+.formControl textarea,
+.formControl input[type=email],
+.formControl input[type=text] {
   height: 40px;
   padding: 10px;
   font-size: 18px;
+}
+
+.formControl > textarea {
+  height: 160px;
+}
+
+.formControl textarea:focus,
+.formControl input[type=text]:focus,
+.formControl input[type=email]:focus {
+  box-shadow: 0px 0px 0px 2px rgb(67,146,240);
+  -moz-box-shadow: 0px 0px 0px 2px rgb(67,146,240);
+  -webkit-box-shadow: 0px 0px 0px 2px rgb(67,146,240);
 }
