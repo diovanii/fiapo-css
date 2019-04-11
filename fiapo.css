@@ -37,6 +37,14 @@ ol, ul {
   list-style-type: none;
 }
 
+img { 
+  user-drag: none; 
+  -o-user-drag: none; 
+  -moz-user-drag: none; 
+  -khtml-user-drag: none; 
+  -webkit-user-drag: none; 
+}
+
 input,
 textarea,
 button {
