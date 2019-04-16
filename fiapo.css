@@ -155,6 +155,7 @@ input[type=text]::-ms-clear{
   height: 160px;
 }
 
+.formControl select:focus,
 .formControl textarea:focus,
 .formControl input[type=text]:focus,
 .formControl input[type=email]:focus,
