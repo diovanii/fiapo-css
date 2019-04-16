@@ -119,11 +119,12 @@ input[type=text]::-ms-clear{
   background-color: #eb4d4b;
 }
 
-.formControl > textarea,
-.formControl > input[type=text],
-.formControl > input[type=email],
-.formControl > input[type=submit],
-.formControl > input[type=password] {
+.formControl select,
+.formControl textarea,
+.formControl input[type=text],
+.formControl input[type=email],
+.formControl input[type=submit],
+.formControl input[type=password] {
   color: #313131;
   font-size: 16px;
   padding: 8px;
@@ -140,6 +141,7 @@ input[type=text]::-ms-clear{
   border: 0;
 }
 
+.formControl select,
 .formControl textarea,
 .formControl input[type=email],
 .formControl input[type=text],
