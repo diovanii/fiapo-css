@@ -1,11 +1,10 @@
-
 /* --------------------------- */
 /*          Fiapo css          */
 /* --------------------------- */
 
 /*
  * author: Diovani Dal'Moro
- * version: 1.3
+ * version: 2.3
  * license: MIT License 
  *
 */
@@ -14,93 +13,244 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-@-moz-document url-prefix() {
-  * {
-    user-select: auto !important;
-    -moz-user-select: auto !important;
-  }
 }
 
 html, body {
   height: 100%;
-}
-
-a {
-  text-decoration: none;
+  line-height: 1.15;
+  -webkit-text-size-adjust: 100%;
 }
 
 ol, ul {
   list-style-type: none;
 }
 
+main {
+  display: block;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+hr {
+  box-sizing: content-box;
+  height: 0;
+  overflow: visible;
+}
+
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+a {
+  text-decoration: none;
+  background-color: transparent;
+}
+
+abbr[title] {
+  border-bottom: none;
+  text-decoration: underline;
+  text-decoration: underline dotted; }
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+code,
+kbd,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+small {
+  font-size: 80%;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
 img { 
   user-drag: none; 
-  -o-user-drag: none; 
-  -moz-user-drag: none; 
-  -khtml-user-drag: none; 
-  -webkit-user-drag: none; 
+  border-style: none;
 }
 
+button,
 input,
-textarea,
-button {
-  border: 0;
-  outline: none;
-  border-radius: 0;
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
 }
 
-table {
-  border-collapse: collapse;
+button,
+[type=reset],
+[type=button],
+[type=submit] {
+  font-weight: bolder;
+  appearance: none;
+  cursor: pointer;
+  border: 0;
+}
+
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+  border: 0;
+}
+
+button:-moz-focusring,
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
+legend {
+  box-sizing: border-box;
+  color: inherit;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  white-space: normal;
+}
+
+progress {
+  vertical-align: baseline;
 }
 
 textarea {
-  outline: none;
+  height: 160px;
   resize: none;
-  height: 180px;
   overflow-y: auto;
-  background-color: #fff;
 }
 
-a,
-button,
-input[type=submit],
-input[type=button] {
+[type=checkbox],
+[type=radio] {
+  padding: 0;
+  outline: none;
   cursor: pointer;
-  outline: 0;
+  box-sizing: border-box;
+}
+
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+details {
+  display: block;
+}
+
+summary {
+  display: list-item;
+}
+
+template {
+  display: none;
+}
+
+[hidden],
+input[type=hidden] {
+  display: none;
 }
 
 button,
 select,
-textarea,
-input[type=text],
-input[type=email],
-input[type=button],
+input[type=reset],
 input[type=submit],
-input[type=password] {
-  outline: 0;
+input[type=button] {
   border: 0;
-  background-color: #fff;
+  outline: none;
+  cursor: pointer;
+  background-color: #ddd;
+  appearance: none;
 }
 
 input[type=text]::-ms-clear{
   display: none;
 }
 
-/*********************** GENERAL CLASSES **********************/
+select,
+textarea,
+input[type=url],
+input[type=tel],
+input[type=text],
+input[type=email],
+input[type=search],
+input[type=number],
+input[type=password],
+input[type=time],
+input[type=week],
+input[type=date],
+input[type=month],
+input[type=date-time],
+input[type=datetime-local] {
+  outline: none;
+}
 
-.clear{
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-moz-inner-spin-button {
+  cursor: pointer;
+}
+
+input[type=search]::-webkit-search-decoration,
+input[type=search]::-webkit-search-cancel-button,
+input[type=search]::-webkit-search-results-button,
+input[type=search]::-webkit-search-results-decoration {
+  appearance: none;
+  -webkit-appearance:none;
+}
+
+/* ---------------------------- General Classes -------------------------------- */
+
+.clear {
   clear:both;
 }
 
-.container{
-  max-width: 1280px;
+.container {
+  max-width: 1366px;
   margin:0 auto;
   padding:0 2%;
 }
@@ -114,58 +264,176 @@ input[type=text]::-ms-clear{
 }
 
 .success {
-  color: #14220e;
+  color: #213a17;
   background-color: #6ab04c;
+}
+.success a {
+  color: #213a17;
+  font-weight: bolder;
+}
+.success a:hover {
+  border-bottom: 2px solid #213a17;
+}
+
+.warning {
+  color: #554912;
+  background-color: #edc941;
+}
+.warning a {
+  color: #554912;
+  font-weight: bolder;
+}
+.warning a:hover {
+  border-bottom: 2px solid #554912;
 }
 
 .error {
-  color: #5f0c0b;
+  color: #6b1312;
   background-color: #eb4d4b;
 }
+.error a {
+  color: #6b1312;
+  font-weight: bold;
+}
+.error a:hover {
+  border-bottom: 2px solid #6b1312;
+}
+
+.rounded,
+.rounded select,
+.rounded textarea,
+.rounded button,
+.rounded [type=reset],
+.rounded [type=submit],
+.rounded [type=button]
+.rounded [type=time],
+.rounded [type=week],
+.rounded [type=month],
+.rounded [type=date],
+.rounded [type=date-time],
+.rounded [type=datetime-local],
+.rounded [type=tel],
+.rounded [type=url],
+.rounded [type=text],
+.rounded [type=email],
+.rounded [type=number],
+.rounded [type=search],
+.rounded [type=password] {
+  border-radius: 3px;
+}
+
+.formControl .btn {
+  color: #fff;
+  padding: 6px 12px;
+  text-align: center;
+}
+
+.formControl .btn-red { color: #F7D0CF; background-color: #eb4d4b; }
+.formControl .btn-blue { color: #A3D8FF; background-color: #0496FF;}
+.formControl .btn-purple { color: #E8E8E8; background-color: #7269DB;}
+.formControl .btn-green { color: #D6EFD0; background-color: #54BF3C; }
+
+.formControl .btn-red:hover {  background-color: #DD3E3B; }
+.formControl .btn-blue:hover { background-color: #008DF2;}
+.formControl .btn-purple:hover { background-color: #6258CE;}
+.formControl .btn-green:hover { background-color: #46B22E; }
 
 .formControl select,
 .formControl textarea,
-.formControl input[type=text],
-.formControl input[type=email],
-.formControl input[type=submit],
-.formControl input[type=password] {
+.formControl [type=time],
+.formControl [type=week],
+.formControl [type=month],
+.formControl [type=date],
+.formControl [type=date-time],
+.formControl [type=datetime-local],
+.formControl [type=tel],
+.formControl [type=url],
+.formControl [type=text],
+.formControl [type=email],
+.formControl [type=number],
+.formControl [type=search],
+.formControl [type=password] {
   color: #313131;
-  font-size: 16px;
-  padding: 8px;
   transition: 0.35s;
-  border-radius: 3px;
   border: 1px solid #ccc;
 }
 
-.formControl input[type=submit],
-.formControl input[type=button],
-.formControl button {
-  font-weight: bold;
+.formControl button,
+.formControl [type=reset],
+.formControl [type=submit],
+.formControl [type=button] {
   transition: 0.35s;
-  border: 0;
 }
 
 .formControl select,
 .formControl textarea,
-.formControl input[type=email],
-.formControl input[type=text],
-.formControl input[type=password] {
-  height: 40px;
-  padding: 10px;
-  font-size: 18px;
+.formControl [type=time],
+.formControl [type=week],
+.formControl [type=month],
+.formControl [type=date],
+.formControl [type=date-time],
+.formControl [type=datetime-local],
+.formControl [type=tel],
+.formControl [type=url],
+.formControl [type=text],
+.formControl [type=email],
+.formControl [type=number],
+.formControl [type=search],
+.formControl [type=password] {
+  padding: 6px 8px;
 }
 
 .formControl textarea {
   height: 180px !important;
 }
 
+.formControl [type=time]:focus,
+.formControl [type=week]:focus,
+.formControl [type=month]:focus,
+.formControl [type=date]:focus,
+.formControl [type=date-time]:focus,
+.formControl [type=datetime-local]:focus,
 .formControl select:focus,
 .formControl textarea:focus,
-.formControl input[type=text]:focus,
-.formControl input[type=email]:focus,
-.formControl input[type=password]:focus {
-  border-color: rgba(10,108,240,0.5);
-  box-shadow: 0px 0px 0px 2px rgba(10,198,255,0.5);
-  -moz-box-shadow: 0px 0px 0px 2px rgba(10,198,255,0.5);
-  -webkit-box-shadow: 0px 0px 0px 2px rgba(10,198,255,0.5);
+.formControl [type=url]:focus,
+.formControl [type=tel]:focus,
+.formControl [type=text]:focus,
+.formControl [type=email]:focus,
+.formControl [type=number]:focus,
+.formControl [type=search]:focus,
+.formControl [type=password]:focus {
+  border-color: #02A9EA;
+  box-shadow: 0px 0px 0px 2px rgb(32, 164, 243, 0.4);
+  -moz-box-shadow: 0px 0px 0px 2px  rgb(32, 164, 243, 0.4);
+  -webkit-box-shadow: 0px 0px 0px 2px  rgb(32, 164, 243, 0.4);
+}
+
+select[class=noshadow]:focus,
+textarea[class=noshadow]:focus,
+[type=url][class=noshadow]:focus,
+[type=tel][class=noshadow]:focus,
+[type=text][class=noshadow]:focus,
+[type=email][class=noshadow]:focus,
+[type=number][class=noshadow]:focus,
+[type=search][class=noshadow]:focus,
+[type=password][class=noshadow]:focus,
+[type=time][class=noshadow]:focus,
+[type=week][class=noshadow]:focus,
+[type=month][class=noshadow]:focus,
+[type=date][class=noshadow]:focus,
+[type=date-time][class=noshadow]:focus,
+[type=datetime-local][class=noshadow]:focus,
+.formControl.noshadow select:focus,
+.formControl.noshadow textarea:focus,
+.formControl.noshadow [type=url]:focus,
+.formControl.noshadow [type=tel]:focus,
+.formControl.noshadow [type=text]:focus,
+.formControl.noshadow [type=email]:focus,
+.formControl.noshadow [type=number]:focus,
+.formControl.noshadow [type=search]:focus,
+.formControl.noshadow [type=password]:focus {
+  border-color: #02A9EA;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
 }
