@@ -4,7 +4,7 @@
 
 /*
  * author: Diovani Dal'Moro
- * version: 2.3
+ * version: 2.4
  * license: MIT License 
  *
 */
@@ -30,8 +30,8 @@ main {
 }
 
 h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
+  font-size: 32px;
+  margin: 10px 0;
 }
 
 hr {
@@ -42,7 +42,7 @@ hr {
 
 pre {
   font-family: monospace, monospace;
-  font-size: 1em;
+  font-size: 16px;
 }
 
 a {
@@ -64,7 +64,7 @@ code,
 kbd,
 samp {
   font-family: monospace, monospace;
-  font-size: 1em;
+  font-size: 16px;
 }
 
 small {
@@ -80,11 +80,11 @@ sup {
 }
 
 sub {
-  bottom: -0.25em;
+  bottom: -4px;
 }
 
 sup {
-  top: -0.5em;
+  top: -8px;
 }
 
 img { 
@@ -130,7 +130,7 @@ button:-moz-focusring,
 }
 
 fieldset {
-  padding: 0.35em 0.75em 0.625em;
+  padding: 5px 12px 10px;
 }
 
 legend {
@@ -297,6 +297,41 @@ input[type=search]::-webkit-search-results-decoration {
 }
 .error a:hover {
   border-bottom: 2px solid #6b1312;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.noselect b,
+.noselect i,
+.noselect p,
+.noselect h1,
+.noselect h2,
+.noselect h3,
+.noselect h4,
+.noselect h5,
+.noselect h6,
+.noselect em,
+.noselect del,
+.noselect img,
+.noselect ins,
+.noselect sub,
+.noselect sup,
+.noselect mark,
+.noselect span,
+.noselect abbr,
+.noselect label,
+.noselect strong {
+  -webkit-user-drag: none;
+  cursor: default;
+  -ms-cursor: default;
+  -moz-cursor: default;
+  -webkit-cursor: default;
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
 }
 
 .rounded,
