@@ -4,7 +4,7 @@
 
 /*
  * author: Diovani Dal'Moro
- * version: 2.4
+ * version: 2.5
  * license: MIT License 
  *
 */
@@ -251,11 +251,41 @@ input[type=search]::-webkit-search-results-decoration {
 
 .container {
   max-width: 1366px;
-  margin:0 auto;
-  padding:0 2%;
+  margin: 0 auto;
+  padding: 0 2%;
 }
 
-.alert {
+/* ------- Text classes ------- */
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.blockquote::before,
+.blockquote::after {
+  font-size: 1.7em;
+  color: #999;
+}
+
+.blockquote::before {
+  content: '\201C  ';
+}
+
+.blockquote::after {
+  content: '  \201D';
+}
+
+/* ------- Alert boxes ------- */
+
+[class^=alert-] {
   padding: 20px;
   font-weight: 500;
   line-height: 25px;
@@ -263,66 +293,71 @@ input[type=search]::-webkit-search-results-decoration {
   border-radius: 3px;
 }
 
-.success {
+.alert-success {
   color: #213a17;
   background-color: #6ab04c;
 }
-.success a {
+.alert-success a {
   color: #213a17;
   font-weight: bolder;
-}
-.success a:hover {
   border-bottom: 2px solid #213a17;
 }
 
-.warning {
+.alert-info {
+  color: #333;
+  background-color: #ccc;
+}
+.alert-info a {
+  color: #333;
+  font-weight: bolder;
+  border-bottom: 2px solid #333;
+}
+
+.alert-warning {
   color: #554912;
   background-color: #edc941;
 }
-.warning a {
+.alert-warning a {
   color: #554912;
   font-weight: bolder;
-}
-.warning a:hover {
   border-bottom: 2px solid #554912;
 }
 
-.error {
+.alert-error {
   color: #6b1312;
   background-color: #eb4d4b;
 }
-.error a {
+.alert-error a {
   color: #6b1312;
   font-weight: bold;
-}
-.error a:hover {
   border-bottom: 2px solid #6b1312;
 }
 
-.textCenter {
-  text-align: center;
-}
+/* ------- No user selection (add this class to body) ------- */
 
-.noselect b,
-.noselect i,
-.noselect p,
-.noselect h1,
-.noselect h2,
-.noselect h3,
-.noselect h4,
-.noselect h5,
-.noselect h6,
-.noselect em,
-.noselect del,
-.noselect img,
-.noselect ins,
-.noselect sub,
-.noselect sup,
-.noselect mark,
-.noselect span,
-.noselect abbr,
-.noselect label,
-.noselect strong {
+.no-select b,
+.no-select i,
+.no-select p,
+.no-select h1,
+.no-select h2,
+.no-select h3,
+.no-select h4,
+.no-select h5,
+.no-select h6,
+.no-select em,
+.no-select del,
+.no-select img,
+.no-select ins,
+.no-select sub,
+.no-select sup,
+.no-select mark,
+.no-select span,
+.no-select abbr,
+.no-select label,
+.no-select strong,
+.no-select a:disabled,
+.no-select input:disabled,
+.no-select input::placeholder {
   -webkit-user-drag: none;
   cursor: default;
   -ms-cursor: default;
@@ -333,6 +368,10 @@ input[type=search]::-webkit-search-results-decoration {
   -moz-user-select: none;
   -webkit-user-select: none;
 }
+
+/* ------------- Form styles ------------ */
+
+/* ------- rounded inputs ------- */
 
 .rounded,
 .rounded select,
@@ -357,118 +396,184 @@ input[type=search]::-webkit-search-results-decoration {
   border-radius: 3px;
 }
 
-.formControl .btn {
+/* ------- checkbox input ------- */
+
+.checkbox-blue {
+  width: 20px;
+  height: 20px;
+  -webkit-appearance: none;
+  display: inline-block;
   color: #fff;
-  padding: 6px 12px;
-  text-align: center;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  position: relative;
 }
 
-.formControl .btn-red { color: #F7D0CF; background-color: #eb4d4b; }
-.formControl .btn-blue { color: #A3D8FF; background-color: #0496FF;}
-.formControl .btn-purple { color: #E8E8E8; background-color: #7269DB;}
-.formControl .btn-green { color: #D6EFD0; background-color: #54BF3C; }
+.checkbox-blue:hover {
+  border-color: #bababa;
+}
 
-.formControl .btn-red:hover {  background-color: #DD3E3B; }
-.formControl .btn-blue:hover { background-color: #008DF2;}
-.formControl .btn-purple:hover { background-color: #6258CE;}
-.formControl .btn-green:hover { background-color: #46B22E; }
+.checkbox-blue:checked {
+  border-color:#02A9EA;
+  background-color: #02A9EA;
+}
 
-.formControl select,
-.formControl textarea,
-.formControl [type=time],
-.formControl [type=week],
-.formControl [type=month],
-.formControl [type=date],
-.formControl [type=date-time],
-.formControl [type=datetime-local],
-.formControl [type=tel],
-.formControl [type=url],
-.formControl [type=text],
-.formControl [type=email],
-.formControl [type=number],
-.formControl [type=search],
-.formControl [type=password] {
+.checkbox-blue:checked:hover {
+  border-color: #00a4e6;
+  background-color: #00a4e6;
+}
+
+.checkbox-blue:checked::after {
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 14px;
+  color: #fff;
+  content: '\2714';
+}
+
+/* ------- radio input ------- */
+
+.radio-blue {
+  width: 20px;
+  height: 20px;
+  -webkit-appearance: none;
+  display: inline-block;
+  color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.radio-blue:hover {
+  border-color: #bababa;
+}
+
+.radio-blue:checked {
+  border-color:#02A9EA;
+  background-color: #02A9EA;
+  z-index: 1;
+}
+
+.radio-blue:checked:hover {
+  border-color: #00a4e6;
+  background-color: #00a4e6;
+}
+
+.radio-blue:checked::after {
+  width: 10px;
+  height: 10px;
+  content: '';
+  transform: translate(-53%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.form-control select,
+.form-control textarea,
+.form-control [type=time],
+.form-control [type=week],
+.form-control [type=month],
+.form-control [type=date],
+.form-control [type=date-time],
+.form-control [type=datetime-local],
+.form-control [type=tel],
+.form-control [type=url],
+.form-control [type=text],
+.form-control [type=email],
+.form-control [type=number],
+.form-control [type=search],
+.form-control [type=password] {
   color: #313131;
   transition: 0.35s;
   border: 1px solid #ccc;
 }
 
-.formControl button,
-.formControl [type=reset],
-.formControl [type=submit],
-.formControl [type=button] {
+.form-control button,
+.form-control [type=reset],
+.form-control [type=submit],
+.form-control [type=button] {
   transition: 0.35s;
 }
 
-.formControl select,
-.formControl textarea,
-.formControl [type=time],
-.formControl [type=week],
-.formControl [type=month],
-.formControl [type=date],
-.formControl [type=date-time],
-.formControl [type=datetime-local],
-.formControl [type=tel],
-.formControl [type=url],
-.formControl [type=text],
-.formControl [type=email],
-.formControl [type=number],
-.formControl [type=search],
-.formControl [type=password] {
+.form-control select,
+.form-control textarea,
+.form-control [type=time],
+.form-control [type=week],
+.form-control [type=month],
+.form-control [type=date],
+.form-control [type=date-time],
+.form-control [type=datetime-local],
+.form-control [type=tel],
+.form-control [type=url],
+.form-control [type=text],
+.form-control [type=email],
+.form-control [type=number],
+.form-control [type=search],
+.form-control [type=password] {
   padding: 6px 8px;
 }
 
-.formControl textarea {
+.form-control textarea {
   height: 180px !important;
 }
 
-.formControl [type=time]:focus,
-.formControl [type=week]:focus,
-.formControl [type=month]:focus,
-.formControl [type=date]:focus,
-.formControl [type=date-time]:focus,
-.formControl [type=datetime-local]:focus,
-.formControl select:focus,
-.formControl textarea:focus,
-.formControl [type=url]:focus,
-.formControl [type=tel]:focus,
-.formControl [type=text]:focus,
-.formControl [type=email]:focus,
-.formControl [type=number]:focus,
-.formControl [type=search]:focus,
-.formControl [type=password]:focus {
+/* ------- default effects ------- */
+
+.form-control [type=time]:focus,
+.form-control [type=week]:focus,
+.form-control [type=month]:focus,
+.form-control [type=date]:focus,
+.form-control [type=date-time]:focus,
+.form-control [type=datetime-local]:focus,
+.form-control select:focus,
+.form-control textarea:focus,
+.form-control [type=url]:focus,
+.form-control [type=tel]:focus,
+.form-control [type=text]:focus,
+.form-control [type=email]:focus,
+.form-control [type=number]:focus,
+.form-control [type=search]:focus,
+.form-control [type=password]:focus {
   border-color: #02A9EA;
   box-shadow: 0px 0px 0px 2px rgb(32, 164, 243, 0.4);
-  -moz-box-shadow: 0px 0px 0px 2px  rgb(32, 164, 243, 0.4);
-  -webkit-box-shadow: 0px 0px 0px 2px  rgb(32, 164, 243, 0.4);
 }
 
-select[class=noshadow]:focus,
-textarea[class=noshadow]:focus,
-[type=url][class=noshadow]:focus,
-[type=tel][class=noshadow]:focus,
-[type=text][class=noshadow]:focus,
-[type=email][class=noshadow]:focus,
-[type=number][class=noshadow]:focus,
-[type=search][class=noshadow]:focus,
-[type=password][class=noshadow]:focus,
-[type=time][class=noshadow]:focus,
-[type=week][class=noshadow]:focus,
-[type=month][class=noshadow]:focus,
-[type=date][class=noshadow]:focus,
-[type=date-time][class=noshadow]:focus,
-[type=datetime-local][class=noshadow]:focus,
-.formControl.noshadow select:focus,
-.formControl.noshadow textarea:focus,
-.formControl.noshadow [type=url]:focus,
-.formControl.noshadow [type=tel]:focus,
-.formControl.noshadow [type=text]:focus,
-.formControl.noshadow [type=email]:focus,
-.formControl.noshadow [type=number]:focus,
-.formControl.noshadow [type=search]:focus,
-.formControl.noshadow [type=password]:focus {
+/* ------- No outline effect ------- */
+
+select.no-outline:focus,
+textarea.no-outline:focus,
+[type=url].no-outline:focus,
+[type=tel].no-outline:focus,
+[type=text].no-outline:focus,
+[type=email].no-outline:focus,
+[type=number].no-outline:focus,
+[type=search].no-outline:focus,
+[type=password].no-outline:focus,
+[type=time].no-outline:focus,
+[type=week].no-outline:focus,
+[type=month].no-outline:focus,
+[type=date].no-outline:focus,
+[type=date-time].no-outline:focus,
+[type=datetime-local].no-outline:focus,
+.form-control.no-outline select:focus,
+.form-control.no-outline textarea:focus,
+.form-control.no-outline [type=url]:focus,
+.form-control.no-outline [type=tel]:focus,
+.form-control.no-outline [type=text]:focus,
+.form-control.no-outline [type=email]:focus,
+.form-control.no-outline [type=number]:focus,
+.form-control.no-outline [type=search]:focus,
+.form-control.no-outline [type=password]:focus {
   border-color: #02A9EA;
   box-shadow: none;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
 }
